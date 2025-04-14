@@ -40,15 +40,16 @@ def game_result(game_board):
         # проверка победы по Горизонтали
         [game_board[0][0], game_board[0][1], game_board[0][2]],
         [game_board[1][0], game_board[1][1], game_board[1][2]],
-        [game_board[1][0], game_board[1][1], game_board[1][2]],
+        [game_board[2][0], game_board[2][1], game_board[2][2]],
         # проверка победы по Вертикали
         [game_board[0][0], game_board[1][0], game_board[2][0]],
         [game_board[0][1], game_board[1][1], game_board[2][1]],
         [game_board[0][2], game_board[1][2], game_board[2][2]],
         # проверка победы по Диагоналям
         [game_board[0][0], game_board[1][1], game_board[2][2]],
-        [game_board[0][0], game_board[1][1], game_board[2][2]],
+        [game_board[0][2], game_board[1][1], game_board[2][0]],
     ]
+
 
     # Проверка условий
     for lines in results:
@@ -82,6 +83,10 @@ while True:
 
     # Начало игры
     if game_start == 'игра':
+        # Сброс игрового поля
+        game_board = [[N, N, N],
+                      [N, N, N],
+                      [N, N, N]]
         while True:
             try:
                 print(f'\nВведите координаты хода')
